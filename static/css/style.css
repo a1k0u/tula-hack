@@ -21,10 +21,10 @@ body, html {
 
 .main_background .img_back {
     position: absolute;
-    top: 17%;
-    right: 25%;
-    width: 100%;
-    height: 100%;
+    top: 24%;
+    right: 31%;
+    width: 90%;
+    height: 90%;
 }
 
 .registration {
@@ -583,12 +583,128 @@ body, html {
     object-fit: cover;
 }
 
-
 .skills_info {
     height: 100vh;
     width: 20%;
     background-color: #222222;
-    flex-wrap: wrap;
     display: flex;
+    flex-direction: column;
+}
+
+.skills_header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 8px;
+    height: 5%;
+    width: 100%;
+}
+
+.skills_header p {
+    position: absolute;
+    z-index: 2;
+    color: #FFFFFF;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.ctn2 {
+    z-index: 0;
+    position: absolute;
+    top: 45%;
+    background-color: #FFFFFF;
+    height:1px;
+    width: 90%;
+    color: #FFFFFF;
+}
+
+.ctn1 {
+    position: absolute;
+    background-color: #222222;
+    z-index: 1;
+    width: 180px;
+    height: 30px;
+}
+
+.mail_skills {
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+}
+
+.mail_skills_header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+.mail_skills_header p {
+    font-family: Montserrat;
+    font-size: 25px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.mail_skills_header img {
+    position: absolute;
+    left: 10%;
+    width: 100%;
+    height: 100%;
+}
+
+.skills_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.box_skill {
+    margin: 4px;
+    background-color: #EDEFF0;
+    color: #686868;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.ctn11 {
+    position: absolute;
+    background-color: #222222;
+    z-index: 1;
+    width: 265px;
+    height: 30px;
+}
+
+.box_education {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    color: #FFFFFF;
+    margin: 40px;
+    padding-left: 40px;
+}
+
+.edu_title {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.edu_desc {
+    margin-top: 10px;
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.box_education img {
+    position: absolute;
+    left: 3px;
 }
 
