@@ -755,7 +755,7 @@ body, html {
 .index_enter {
     margin-top: 7%;
     width: 95%;
-    height: 8%;
+    height: 100%;
     background-color: #FA5D0A;
     color: #FFFFFF;
     font-size: 25px;
@@ -764,6 +764,10 @@ body, html {
     alignment: center;
     border: none;
     border-radius: 5px;
+}
+
+.index_enter:hover {
+    background-color: #FE813E;
 }
 
 .index_photo {

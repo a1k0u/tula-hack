@@ -50,10 +50,6 @@ def index():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    db = get_db()
-    database: DataBase = DataBase(db)
-    if request.method == 'POST':
-        print(request.form)
     return render_template('login.html', title='Login page')
 
 
@@ -64,13 +60,8 @@ def registration():
     return render_template('registration.html', title='Registration page')
 
 
-@app.route('/profile/<path:username>')
+@app.route('/profile', methods=['GET', 'POST'])
 def profile():
-    return render_template('profile.html')
-
-
-@app.route('/test')
-def test():
     return render_template('profile.html')
 
 
