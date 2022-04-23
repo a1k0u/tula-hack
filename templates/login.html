@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 {{ super() }}
-
-    {% for msg in get_flashed_messages(True) %}
-    <div>{{ msg }}</div>
-    {% endfor %}
-
-    <form action="{{ url_for('login') }}" method="post">
-        <input type="text" name="username">
-        <input type="password" name="password">
-        <input type="submit">
-    </form>
+     <div class="main_background">
+        <img src="/static/images/portfolio_logo.svg">
+        <form class="registration" action="{{ url_for('login') }}" method="post">
+            <br/>
+            <input type="text" name="username" placeholder="Введите логин..."><br/>
+            <br/>
+            <input type="password" name="password" placeholder="Введите пароль...">
+            <br>
+            <button type="submit">Войти</button>
+            <p class="under_button">Или <a class="link_under_button">зарегистрироваться</a></p>
+        </form>
+     </div>
 {% endblock %}
