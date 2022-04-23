@@ -2,7 +2,17 @@
 
 {% block content %}
 {{ super() }}
-    <a href="{{ url_for('registration') }}"><input type="submit" value="Registration"></a>
-    <a href="{{ url_for('login') }}"><input type="submit" value="Enter"></a>
-    <a href="{{ url_for('test') }}"><input type="submit" value="profile"></a>
+   <div class="index_bg">
+        <div class="index_content">
+            <div class="content">
+                <img src="/static/images/logo.svg">
+                <p class="index_title">Порт - это место, которое расскажет о вас.</p>
+                <p class="index_desc">Сервис для создания портфолио, который поможет вам устроиться на работу или получить стипендию.</p>
+                <button class="index_enter">Войти</button>
+            </div>
+        </div>
+        <div class="index_photo">
+            <img src="/static/images/portfolio_logo%202.svg">
+        </div>
+   </div>
 {% endblock %}
