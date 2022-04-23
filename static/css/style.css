@@ -104,18 +104,23 @@ body, html {
     /*flex-wrap: nowrap;*/
     min-width: 100%;
     min-height: 100%;
+    flex-wrap: wrap;
     margin: 0 auto;
 }
+
 
 .person_info {
     width: 25%;
     height: 100vh;
     /*align-self: flex-start;*/
+    position: relative;
     background-color: red;
+    flex-wrap: wrap;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
 
 .photo {
     width: 100%;
@@ -129,6 +134,22 @@ body, html {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    z-index: 0;
+}
+
+.age {
+    position: absolute;
+    bottom: -3%;
+    right: 0;
+    z-index: 1;
+    margin: 0;
+}
+
+.age p {
+    color: #FFFFFF;
+    font-family: "JetBrains Mono";
+    font-size: 60px;
+    font-weight: bold;
 }
 
 .about {
@@ -267,6 +288,7 @@ body, html {
     height: 100vh;
     width: 55%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
 }
 
@@ -566,5 +588,7 @@ body, html {
     height: 100vh;
     width: 20%;
     background-color: #222222;
+    flex-wrap: wrap;
+    display: flex;
 }
 
