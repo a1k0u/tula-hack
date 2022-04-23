@@ -52,6 +52,8 @@ def index():
 def login():
     db = get_db()
     database: DataBase = DataBase(db)
+    if request.method == 'POST':
+        print(request.form)
     return render_template('login.html', title='Login page')
 
 

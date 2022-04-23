@@ -2,8 +2,9 @@
 {% block content %}
 {{ super() }}
      <div class="main_background">
-        <img src="/static/images/portfolio_logo.svg">
+        <img class="img_back" src="/static/images/portfolio_logo.svg">
         <form class="registration" action="{{ url_for('login') }}" method="post">
+            <img class="img_logo" src="/static/images/logo.svg">
             <br/>
             <input type="text" name="username" placeholder="Введите логин..."><br/>
             <br/>
