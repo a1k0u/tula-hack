@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+
+<form action="{{ url_for('registration') }}">
+    <input type="submit" value="Registration">
+</form>
+
+<form action="{{ url_for('login') }}">
+    <input type="submit" value="Enter">
+</form>
+
+{% endblock %}
