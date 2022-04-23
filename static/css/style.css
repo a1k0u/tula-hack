@@ -278,6 +278,8 @@ body, html {
 }
 
 .list_of_works {
+    display: flex;
+    flex-direction: column;
     width: 70%;
     background-color: #FFFFFF;
 }
@@ -332,6 +334,43 @@ body, html {
     width: 90%;
     background-color: #222222;
 }
+
+.heres_list_of_works {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 90%;
+    justify-content: center;
+    align-content: center;
+}
+
+.box_work {
+    width: 33%;
+    height: 28%;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+
+.yeas {
+    margin-bottom: 15px;
+    font-family: 'Montserrat';
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.desc_work p {
+    font-family: 'Montserrat';
+    font-size: 16px;
+}
+
+.data_work {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 15px;
+}
+
 
 .projects {
     width: 30%;
