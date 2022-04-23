@@ -95,3 +95,184 @@ body, html {
     bottom: 85px;
     left: 43px;
 }
+
+.block {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    /*align-items: flex-start;*/
+    /*flex-wrap: nowrap;*/
+    min-width: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+}
+
+.person_info {
+    width: 25%;
+    height: 100vh;
+    /*align-self: flex-start;*/
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.photo {
+    width: 100%;
+    height: 50vh;
+    background-color: #FA5D0A;
+    position: relative;
+}
+
+.photo img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.about {
+    width: 100%;
+    height: 50vh;
+    background-color: #222222;
+    display: flex;
+    flex-direction: row;
+    color: #FFFFFF;
+    font-family: 'Montserrat';
+}
+
+.about_info {
+    display: flex;
+    margin: 7%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.profession {
+    display: flex;
+    flex-direction: column;
+}
+
+.status {
+    position: relative;
+}
+
+.work p {
+    font-family: 'Montserrat';
+    font-size: 40px;
+    font-weight: 500;
+}
+.obj_circle img {
+    position: absolute;
+    top: 10px;
+    left: 3px;
+    width: 10px;
+}
+
+.st p {
+    font-family: 'Montserrat';
+    font-size: 15px;
+    color: #ADA8A5;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+.status {
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+}
+
+.about_text {
+    display: flex;
+    flex-direction: column;
+}
+
+.about_header {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.about_header p {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.about_header img {
+    width: 30px;
+    padding-left: 15px;
+}
+
+.about_information {
+    width: 90%;
+}
+
+.about_information p {
+    font-size: 15px;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: row;
+}
+
+.phone {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact_text p {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.contact_media {
+    display: flex;
+    padding-top: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact_media p {
+    padding-top: 10px;
+}
+
+.media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 140px;
+}
+
+.name {
+    width: 35%;
+    position: relative;
+}
+
+.name p {
+    position: absolute;
+    bottom: 0;
+    right: -16px;
+    writing-mode: tb-rl;
+    transform:rotate(180deg);
+    font-size: 70px;
+    font-weight: bold;
+    font-family: "JetBrains Mono";
+}
+
+.work_info {
+    height: 100vh;
+    text-align: center;
+}
+
+.skills_info {
+    width: 45%;
+    height: 100vh;
+    line-height: 100px;
+    text-align: center;
+
+}
+

@@ -1,5 +1,66 @@
 {% extends 'base.html' %}
 {%  block content %}
 {{ super() }}
-    <p>username={{ username }}</p>
+    <div class="block">
+        <div class="person_info">
+            <div class="photo">
+                <img src="/static/images/unsplash_pDowovT7s7Q.png">{# photo #}
+            </div>
+            <div class="about">
+                <div class="about_info">
+                    <div class="profession">
+                        <div class="work">
+                            <p>Product design</p> {# profession #}
+                        </div>
+                        <div class="status">
+                            <div class="obj_circle">
+                                <img src="/static/images/circle.svg">
+                            </div>
+                            <div class="st">
+                                <p>В поиске работы</p> {# status #}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about_text">
+                        <div class="about_header">
+                            <p>О себе</p>
+                            <img src="/static/images/emoji.svg">
+                        </div>
+                        <div class="about_information">
+                            <p> {# about_information #}
+                                В тексте «о себе» вы должны
+                                предоставить  ваваававваввпвпвпользователям
+                                полную информацию, без вававава
+                                сокращений и недосказанности.Не знаю,
+                                что писать, буду просто копировать
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contacts">
+                        <div class="phone">
+                            <div class="contact_text"><p>Контакты</p></div>
+                            <div class="contact_media">
+                                <p>lenakim@mail.ru</p> {# email #}
+                                <p>+79516023542</p> {# phone #}
+                            </div>
+                        </div>
+                        <div class="media"> {# links #}
+                            <a href="#"><img src="/static/images/telegram.svg"></a>
+                            <a href="#"><img src="/static/images/LinkedIn.svg"></a>
+                            <a href="#"><img src="/static/images/vk.svg"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="name">
+                    <p>Lena Kim</p> {# name #}
+                </div>
+            </div>
+        </div>
+        <div class="work_info">
+
+        </div>
+        <div class="skills_info">
+
+        </div>
+    </div>
 {% endblock %}

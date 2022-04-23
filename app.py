@@ -65,8 +65,13 @@ def registration():
 
 
 @app.route('/profile/<path:username>')
-def profile(username: str):
-    return render_template('profile.html', username=username)
+def profile():
+    return render_template('profile.html')
+
+
+@app.route('/test')
+def test():
+    return render_template('profile.html')
 
 
 @app.errorhandler(404)
