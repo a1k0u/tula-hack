@@ -2,16 +2,14 @@ import sqlite3
 import os
 from flask import (
     Flask,
-    render_template as rt,
+    render_template,
     request,
     g,
     flash,
-    abort,
     redirect,
     url_for,
-    make_response,
-    render_template,
 )
+
 from db import DataBase
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager
@@ -19,7 +17,6 @@ from user_login import UserLogin
 
 import werkzeug.exceptions
 
-from db import *
 from dotenv import dotenv_values
 
 CONFIG = dotenv_values(".env")
@@ -42,6 +39,14 @@ def get_db():
     if not hasattr(g, "link_db"):
         g.link_db = connect_db()
     return g.link_db
+
+
+def create_db():
+    db = connect_db()
+    with app.open_resource('sq_db.sql', mode='r') as f:
+        db.cursor().executescript(f.read())
+    db.commit()
+    db.close()
 
 
 login_manager = LoginManager(app)
