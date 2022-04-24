@@ -83,7 +83,7 @@ body, html {
 }
 
 .success {
-    background-color: limegreen;
+    background-color: #5A5FD9;
 }
 
 .registration button:hover {
@@ -171,7 +171,7 @@ body, html {
 
 .age p {
     color: #FFFFFF;
-    font-family: "JetBrains Mono";
+    font-family: Floripa;
     font-size: 60px;
     font-weight: bold;
 }
@@ -303,9 +303,8 @@ body, html {
     right: -16px;
     writing-mode: tb-rl;
     transform:rotate(180deg);
-    font-size: 70px;
-    font-weight: bold;
-    font-family: "JetBrains Mono";
+    font-size: 40px;
+    font-family: Floripa;
 }
 
 .work_ {
