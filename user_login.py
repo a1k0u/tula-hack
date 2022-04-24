@@ -14,14 +14,14 @@ class UserLogin(UserMixin):
         return self
 
     def get_id(self):
-        return str(self.__user['id'])
+        return str(self.__user["id"])
 
     def get_name(self):
-        return self.__user['name'] if self.__user else "Без имени"
+        return self.__user["name"] if self.__user else "Без имени"
 
     @staticmethod
     def verify_ext(filename):
-        ext = filename.rsplit('.', 1)[1]
+        ext = filename.rsplit(".", 1)[1]
         if ext == "png" or ext == "PNG":
             return True
         return False

@@ -8,13 +8,17 @@ class DataBase:
 
     def add_user(self, name, hash_password):
         try:
-            self.__cur.execute(f"SELECT COUNT() as `count` FROM users WHERE username LIKE '{name}'")
+            self.__cur.execute(
+                f"SELECT COUNT() as `count` FROM users WHERE username LIKE '{name}'"
+            )
             res = self.__cur.fetchone()
-            if res['count']:
+            if res["count"]:
                 print("Пользователь с таким username уже существует")
                 return False
 
-            self.__cur.execute("INSERT INTO users VALUES(NULL, ?, ?)", (name, hash_password))
+            self.__cur.execute(
+                "INSERT INTO users VALUES(NULL, ?, ?)", (name, hash_password)
+            )
             self.__db.commit()
         except sqlite3.Error as e:
             print("Error server :( " + str(e))
