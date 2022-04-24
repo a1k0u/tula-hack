@@ -26,7 +26,7 @@ SECRET_KEY = CONFIG["SECRET_KEY"]
 
 app = Flask(__name__)
 app.config.from_object(__name__)
-app.config.update(dict(DATABASE=os.path.join(app.root_path, "db.db")))
+app.config.update(dict(DATABASE=os.path.join(app.root_path, "db.sqlite")))
 
 
 def connect_db():
