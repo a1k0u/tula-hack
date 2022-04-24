@@ -1,8 +1,13 @@
-import os
 import sqlite3
+import os
+from flask import Flask, render_template as rt, request, g, flash, \
+    abort, redirect, url_for, make_response, render_template
+from db import DataBase
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import LoginManager
+from user_login import UserLogin
 
 import werkzeug.exceptions
-from flask import Flask, render_template, g, url_for, session, request, redirect, flash
 
 from db import *
 from dotenv import dotenv_values
@@ -35,6 +40,17 @@ def get_db():
     return g.link_db
 
 
+login_manager = LoginManager(app)
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    print("load_user")
+    db = get_db()
+    database: DataBase = DataBase(db)
+    return UserLogin().from_db(user_id, database)
+
+
 @app.teardown_appcontext
 def close_db(error):
     if hasattr(g, 'link_db'):
@@ -48,15 +64,38 @@ def index():
     return render_template('index.html', title='Start page')
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login', methods=['POST', "GET"])
 def login():
-    return render_template('login.html', title='Login page')
+    db = get_db()
+    database: DataBase = DataBase(db)
+    if request.method == 'POST':
+        name = request.form.get('username')
+        password = request.form.get('password')
+
+        user = database.get_user_by_name(name)
+        if user and check_password_hash(user['password'], password):
+            return redirect(url_for('profile'))
+        else:
+            flash('Неправильное имя или неверный пароль!')
+    return render_template("login.html")
 
 
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
     db = get_db()
     database: DataBase = DataBase(db)
+    if request.method == "POST":
+        if len(request.form['username'] + request.form['password']) > 8 and \
+                request.form['password'] == request.form['password2']:
+            password_hash = generate_password_hash(request.form['password'])
+            res = database.add_user(request.form['username'], password_hash)
+            if res:
+                flash("Вы успешно зарегистрированы", "success")
+                return redirect(url_for('login'))
+            else:
+                flash("Ошибка при добавлении в БД", "error")
+        else:
+            flash("Неверно заполнены поля", "error")
     return render_template('registration.html', title='Registration page')
 
 

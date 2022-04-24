@@ -3,15 +3,15 @@
 {{ super() }}
      <div class="main_background">
         <img class="img_back" src="/static/images/portfolio_logo.svg">
-        <div class="registration">
+        <form class="registration" action="{{ url_for('login') }}" method="post">
             <img class="img_logo" src="/static/images/logo.svg">
             <br/>
             <input type="text" name="username" placeholder="Введите логин..."><br/>
             <br/>
             <input type="password" name="password" placeholder="Введите пароль...">
             <br>
-            <a href="{{ url_for('profile') }}"><button type="submit">Войти</button></a>
+            <button type="submit">Войти</button>
             <p class="under_button">Или <a class="link_under_button">зарегистрироваться</a></p>
-        </div>
+        </form>
      </div>
 {% endblock %}
