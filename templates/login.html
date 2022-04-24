@@ -10,6 +10,9 @@
             <br/>
             <input type="password" name="password" placeholder="Введите пароль...">
             <br>
+            {% for msg in get_flashed_messages() %}
+                <div class="flash">{{ msg }}</div>
+            {% endfor %}
             <button type="submit">Войти</button>
             <p class="under_button">Или <a class="link_under_button">зарегистрироваться</a></p>
         </form>

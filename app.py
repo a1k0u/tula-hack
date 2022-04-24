@@ -76,7 +76,7 @@ def login():
         if user and check_password_hash(user['password'], password):
             return redirect(url_for('profile'))
         else:
-            flash('Неправильное имя или неверный пароль!')
+            flash('Неверный пароль!')
     return render_template("login.html")
 
 
