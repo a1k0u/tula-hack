@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{%  block content %}
+{{ super() }}
+    <div class="block">
+        <div class="person_info">
+            <div class="photo">
+                <div class="age"><p>{{ age }}</p></div>
+                <img src="{{ profile_photo }}">
+            </div>
+            <div class="about">
+                <div class="about_info">
+                    <div class="profession">
+                        <div class="work">
+                            <p>{{ proffesion }}</p>
+                        </div>
+                        <div class="status">
+                            <div class="obj_circle">
+                                <img src="/static/images/circle.svg">
+                            </div>
+                            <div class="st">
+                                <p>{{ work_status }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about_text">
+                        <div class="about_header">
+                            <p>О себе</p>
+                            <img src="/static/images/emoji.svg">
+                        </div>
+                        <div class="about_information">
+                            <p>
+                                {{ info_about }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contacts">
+                        <div class="phone">
+                            <div class="contact_text"><p>Контакты</p></div>
+                            <div class="contact_media">
+                                <p>{{ email }}</p>
+                                <p>{{ phone }}</p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <a href="{{ tg }}"><img src="/static/images/telegram.svg"></a>
+                            <a href="{{ ln }}"><img src="/static/images/LinkedIn.svg"></a>
+                            <a href="{{ vk }}"><img src="/static/images/vk.svg"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="name">
+                    <p>{{ name }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="work_">
+            <div class="work_info">
+                <div class="list_of_works">
+                    <div class="works_header_block">
+                        <div class="cont1"><p>Работа</p></div>
+                        <div class="cont2"></div>
+                        <div class="cont3"></div>
+                    </div>
+                    <div class="heres_list_of_works">
+                        {% for year, desc_work, position in info_about_work %}
+                        <div class="box_work">
+                            <p class="yeas">{{ year }}</p>
+                            <div class="desc_work">
+                                <p><b>Место работы:</b></p>
+                                <p class="data_work">{{ desc_work }}</p>
+                                <p><b>Позиция:</b></p>
+                                <p class="data_work">{{ position }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="projects">
+                    <div class="projects_header">
+                        <div class="cont111"><p>Проекты</p></div>
+                        <div class="cont222"></div>
+                        <div class="cont333"></div>
+                    </div>
+                    <div class="list_of_projects">
+                        {% for photo, proj_title, proj_desc, proj_link in projects %}
+                        <div class="box_project">
+                            <div class="box_project_photo">
+                                <img src="{{ photo }}">
+                            </div>
+                            <div class="box_project_text">
+                                <p class="project_title">{{ proj_title }}</p>
+                                <p class="project_desc">{{ proj_desc }}</p>
+                                <p class="project_link"><a href="{{ proj_link }}">ccылка</a></p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="awards">
+                <div class="awards_header">
+                    <div class="cont11"><p>Достижения</p></div>
+                    <div class="cont22"></div>
+                    <div class="cont33"></div>
+                </div>
+                <div class="award_photos"> {# diplomas #}
+                    {% for photo in awards %}
+                        <div class="diploma_photo"><a><img src="{{ photo }}"></a></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="skills_info">
+            <div class="skills_header">
+                <div class="ctn2"></div>
+                <div class="ctn1"></div>
+                <p>Навыки</p>
+            </div>
+            <div class="mail_skills">
+                <div class="mail_skills_header">
+                    <p>Ключевые</p>
+                    <img src="/static/images/Emoji(1).svg">
+                </div>
+                <div class="skills_content">
+                    {% for skill in main_skills %}
+                        <div class="box_skill">{{ skill }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="mail_skills">
+                <div class="mail_skills_header">
+                    <p>Дополнительные</p>
+                </div>
+                <div class="skills_content">
+                    {% for skill in extra_skills %}
+                        <div class="box_skill">{{ skill }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="skills_header">
+                <div class="ctn2"></div>
+                <div class="ctn11"></div>
+                <p>Образование</p>
+            </div>
+            <div class="box_education">
+                <img src="/static/images/Emoji(2).svg">
+                <p class="edu_title">{{ uni }}</p>
+                <p class="edu_desc">{{ uni_desc }}</p>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
