@@ -1,12 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 {{ super() }}
-    {% for cat, msg in get_flashed_messages(True) %}
-    <div>{{ msg }}</div>
-    {% endfor %}
-    <form action="{{ url_for('registration') }}" method="post">
-        <input type="text" name="username">
-        <input type="password" name="password">
-        <input type="submit">
-    </form>
+    <div class="main_background">
+        <form class="registration" action="{{ url_for('registration') }}" method="post">
+            <img class="img_logo" src="/static/images/logo.svg">
+            <br/>
+            <input type="text" name="username" placeholder="Ваш логин?..."><br/>
+            <br/>
+            <input type="password" name="password" placeholder="Пароль?...">
+            <br>
+            {% for cat, msg in get_flashed_messages(True) %}
+                <div class="flash {{ cat }}">{{ msg }}</div>
+            {% endfor %}
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+     </div>
 {% endblock %}

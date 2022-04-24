@@ -85,16 +85,16 @@ def registration():
     db = get_db()
     database: DataBase = DataBase(db)
     if request.method == "POST":
-        if len(request.form['username'] + request.form['password']) > 8:
+        if len(request.form['username']) and len(request.form['password']):
             password_hash = generate_password_hash(request.form['password'])
             res = database.add_user(request.form['username'], password_hash)
             if res:
                 flash("Регистрация успешна!", "success")
                 return redirect(url_for('login'))
             else:
-                flash("Ошибка при добавлении в БД", "error")
+                flash("Такой пользователь уже существует!", "error")
         else:
-            flash("Неверно заполнены поля", "error")
+            flash("Некоторые поля не заполнены!", "error")
     return render_template('registration.html', title='Registration page')
 
 
