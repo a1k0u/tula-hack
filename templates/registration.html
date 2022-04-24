@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {{ super() }}
-    {% for msg in get_flashed_messages(True) %}
+    {% for cat, msg in get_flashed_messages(True) %}
     <div>{{ msg }}</div>
     {% endfor %}
     <form action="{{ url_for('registration') }}" method="post">

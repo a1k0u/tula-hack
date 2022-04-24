@@ -76,7 +76,7 @@ def login():
         if user and check_password_hash(user['password'], password):
             return redirect(url_for('profile'))
         else:
-            flash('Неверный пароль!')
+            flash('Неверный пароль!', "error")
     return render_template("login.html")
 
 
@@ -85,12 +85,11 @@ def registration():
     db = get_db()
     database: DataBase = DataBase(db)
     if request.method == "POST":
-        if len(request.form['username'] + request.form['password']) > 8 and \
-                request.form['password'] == request.form['password2']:
+        if len(request.form['username'] + request.form['password']) > 8:
             password_hash = generate_password_hash(request.form['password'])
             res = database.add_user(request.form['username'], password_hash)
             if res:
-                flash("Вы успешно зарегистрированы", "success")
+                flash("Регистрация успешна!", "success")
                 return redirect(url_for('login'))
             else:
                 flash("Ошибка при добавлении в БД", "error")

@@ -75,8 +75,15 @@ body, html {
     width: 104%;
     border: 0;
     border-radius: 5px;
-    background-color: red;
     color: #FFFFFF;
+}
+
+.error {
+    background-color: red;
+}
+
+.success {
+    background-color: limegreen;
 }
 
 .registration button:hover {

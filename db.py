@@ -1,6 +1,4 @@
 import sqlite3
-import time
-import math
 
 
 class DataBase:
@@ -16,8 +14,7 @@ class DataBase:
                 print("Пользователь с таким username уже существует")
                 return False
 
-            tm = math.floor(time.time())
-            self.__cur.execute("INSERT INTO users VALUES(NULL, ?, ?, NULL, ?)", (name, hash_password, tm))
+            self.__cur.execute("INSERT INTO users VALUES(NULL, ?, ?)", (name, hash_password))
             self.__db.commit()
         except sqlite3.Error as e:
             print("Error server :( " + str(e))
